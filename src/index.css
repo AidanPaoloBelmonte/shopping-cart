@@ -25,6 +25,11 @@ h1 {
     margin: 0;
 }
 
+.centerAligned {
+    justify-content: center;
+    align-items: center;
+}
+
 @media (prefers-color-scheme: light) {
     :root {
         color: #213547;

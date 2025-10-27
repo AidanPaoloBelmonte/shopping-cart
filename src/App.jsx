@@ -5,11 +5,12 @@ import Header from "./components/header";
 import "./App.css";
 
 function App() {
+  const [currentContext, setContext] = useState(0);
   const [cartItems, setCartItems] = useState([""]);
 
   return (
     <>
-      <Header cartItems={cartItems}></Header>
+      <Header currentContext={currentContext} cartItems={cartItems}></Header>
     </>
   );
 }
