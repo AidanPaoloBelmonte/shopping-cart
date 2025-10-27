@@ -185,7 +185,7 @@ li:active:has(> .navContent:focus) {
 
     .navContent {
         transform: none;
-        box-shadow: 0px 0px 0px 75px var(--cart-color);
+        box-shadow: 0px 0px 0px 16px var(--cart-color);
 
         background-color: var(--cart-color);
 
