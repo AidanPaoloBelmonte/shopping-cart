@@ -8,10 +8,6 @@
     --cart-color-complimentary: brown;
 }
 
-* {
-    box-sizing: border-box;
-}
-
 nav {
     position: sticky;
     display: flex;
