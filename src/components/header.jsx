@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import "./header.css";
 
 export default function Header({ currentContext, cartItems }) {
@@ -10,20 +12,24 @@ export default function Header({ currentContext, cartItems }) {
       <ol>
         <li className="navHome">
           <div className="navContainer centerAligned">
-            <button className="navContent animated">Home</button>
+            <Link to="home" className="navContent animated">
+              Home
+            </Link>
           </div>
         </li>
         <li className="navShop">
           <div className="navContainer centerAligned">
-            <button className="navContent animated">Shop</button>
+            <Link to="shop" className="navContent animated">
+              Shop
+            </Link>
           </div>
         </li>
         <li className="navCart">
           <div className="navContainer centerAligned">
-            <button className="navContent centerAligned">
+            <Link to="cart" className="navContent centerAligned">
               <span>Cart</span>
               <span className={cartNumberClassName}>{cartNumberDisplay}</span>
-            </button>
+            </Link>
           </div>
         </li>
       </ol>
