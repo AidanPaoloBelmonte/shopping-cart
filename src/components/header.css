@@ -1,11 +1,29 @@
 :root {
     --home-color: steelblue;
     --home-color-transparent: rgba(72, 129, 178, 0.4);
+    --home-shadow-faint:
+        rgba(72, 129, 178, 1) 0px 3px 6px -1px,
+        rgba(72, 129, 178, 0.24) 0px 2px 4px -1px;
+    --home-shadow-strong:
+        rgba(72, 129, 178, 0.8) 0px 4px 6px -1px,
+        rgba(72, 129, 178, 0.24) 0px 10px 6px -2px;
     --shop-color: mediumseagreen;
     --shop-color-transparent: rgba(35, 142, 104, 0.4);
+    --shop-shadow-faint:
+        rgba(35, 142, 104, 1) 0px 3px 6px -1px,
+        rgba(35, 142, 104, 0.24) 0px 2px 4px -1px;
+    --shop-shadow-strong:
+        rgba(35, 142, 104, 0.8) 0px 4px 6px -1px,
+        rgba(35, 142, 104, 0.24) 0px 10px 6px -2px;
     --cart-color: sandybrown;
     --cart-color-transparent: rgba(244, 163, 96, 0.4);
     --cart-color-complimentary: brown;
+    --cart-shadow-faint:
+        rgba(244, 163, 96, 1) 0px 3px 6px -1px,
+        rgba(244, 163, 96, 0.24) 0px 2px 4px -1px;
+    --cart-shadow-strong:
+        rgba(244, 163, 96, 0.8) 0px 4px 6px -1px,
+        rgba(244, 163, 96, 0.24) 0px 10px 6px -2px;
 
     --focus-outline-width: 2px;
 }
@@ -94,7 +112,7 @@ li {
 li:hover,
 li:has(> div > .navContent:focus-visible) {
     .navContainer {
-        box-shadow: 0px 3px 2px 0px var(--home-color);
+        box-shadow: var(--home-shadow-faint);
     }
 }
 
@@ -120,9 +138,7 @@ li:active:has(> div > .navContent:focus-visible) {
     transition-duration: 100ms;
 
     .navContainer {
-        box-shadow:
-            0px 2px 4px 4px var(--home-color),
-            0px 8px 8px 0px var(--home-color-transparent);
+        box-shadow: var(--home-shadow-strong);
 
         transition-duration: 100ms;
     }
@@ -143,7 +159,7 @@ li:active:has(> div > .navContent:focus-visible) {
 .navShop:hover,
 .navShop:has(> div > .navContent:focus-visible) {
     .navContainer {
-        box-shadow: 0px 3px 2px 0px var(--shop-color);
+        box-shadow: var(--shop-shadow-faint);
     }
 }
 
@@ -162,9 +178,7 @@ li:active:has(> div > .navContent:focus-visible) {
 .navShop:active,
 .navShop:active:has(> div > .navContent:focus-visible) {
     .navContainer {
-        box-shadow:
-            0px 2px 4px 4px var(--shop-color),
-            0px 8px 8px 0px var(--shop-color-transparent);
+        box-shadow: var(--shop-shadow-strong);
 
         transition-duration: 100ms;
     }
@@ -187,7 +201,7 @@ li:active:has(> div > .navContent:focus-visible) {
 .navCart:hover,
 .navCart:has(> div > .navContent:focus-visible) {
     .navContainer {
-        box-shadow: 0px 3px 2px 0px var(--cart-color);
+        box-shadow: var(--cart-shadow-faint);
     }
 }
 
@@ -210,9 +224,7 @@ li:active:has(> div > .navContent:focus-visible) {
 .navCart:active,
 .navCart:active:has(> div > .navContent:focus-visible) {
     .navContainer {
-        box-shadow:
-            0px 2px 4px 4px var(--cart-color),
-            0px 8px 8px 0px var(--cart-color-transparent);
+        box-shadow: var(--cart-shadow-strong);
 
         transition-duration: 100ms;
     }
