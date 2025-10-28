@@ -6,6 +6,8 @@
     --cart-color: sandybrown;
     --cart-color-transparent: rgba(244, 163, 96, 0.4);
     --cart-color-complimentary: brown;
+
+    --focus-outline-width: 2px;
 }
 
 nav {
@@ -53,18 +55,10 @@ li {
     display: flex;
     gap: 8px;
 
-    padding: 0px 8px;
-
     text-align: center;
     vertical-align: middle;
 
-    overflow: hidden;
-    background-clip: padding-box;
-    clip-path: inset(0px 0px -15px 0px);
-
-    transition:
-        box-shadow 250ms ease,
-        color 250ms ease-in-out;
+    transition: color 250ms ease-in-out;
 
     .navContent {
         padding: 2px 8px;
@@ -85,10 +79,26 @@ li {
     }
 }
 
-li:hover,
-li:has(> .navContent:focus) {
-    box-shadow: 0px 3px 2px 0px var(--home-color);
+.navContainer {
+    display: flex;
 
+    padding: 0px 8px;
+
+    overflow: hidden;
+    background-clip: padding-box;
+    clip-path: inset(0px 0px -15px 0px);
+
+    transition: box-shadow 250ms ease;
+}
+
+li:hover,
+li:has(> div > .navContent:focus-visible) {
+    .navContainer {
+        box-shadow: 0px 3px 2px 0px var(--home-color);
+    }
+}
+
+li:hover {
     .navContent {
         transform: translate(-3px, -3px);
 
@@ -99,15 +109,23 @@ li:has(> .navContent:focus) {
     }
 }
 
-li:active,
-li:active:has(> .navContent:focus) {
-    box-shadow:
-        0px 2px 4px 4px var(--home-color),
-        0px 8px 8px 0px var(--home-color-transparent);
+li:has(> div > .navContent:focus-visible) {
+    outline: var(--focus-outline-width) solid var(--home-color);
+}
 
+li:active,
+li:active:has(> div > .navContent:focus-visible) {
     color: whitesmoke;
 
     transition-duration: 100ms;
+
+    .navContainer {
+        box-shadow:
+            0px 2px 4px 4px var(--home-color),
+            0px 8px 8px 0px var(--home-color-transparent);
+
+        transition-duration: 100ms;
+    }
 
     .navContent {
         transform: none;
@@ -123,9 +141,13 @@ li:active:has(> .navContent:focus) {
 }
 
 .navShop:hover,
-.navShop:has(> .navContent:focus) {
-    box-shadow: 0px 3px 2px 0px var(--shop-color);
+.navShop:has(> div > .navContent:focus-visible) {
+    .navContainer {
+        box-shadow: 0px 3px 2px 0px var(--shop-color);
+    }
+}
 
+.navShop:hover {
     .navContent {
         box-shadow: 6px 6px 0px var(--shop-color-transparent);
 
@@ -133,13 +155,19 @@ li:active:has(> .navContent:focus) {
     }
 }
 
-.navShop:active,
-.navShop:active:has(> .navContent:focus) {
-    box-shadow:
-        0px 2px 4px 4px var(--shop-color),
-        0px 8px 8px 0px var(--shop-color-transparent);
+.navShop:has(> div > .navContent:focus-visible) {
+    outline: var(--focus-outline-width) solid var(--shop-color);
+}
 
-    transition-duration: 100ms;
+.navShop:active,
+.navShop:active:has(> div > .navContent:focus-visible) {
+    .navContainer {
+        box-shadow:
+            0px 2px 4px 4px var(--shop-color),
+            0px 8px 8px 0px var(--shop-color-transparent);
+
+        transition-duration: 100ms;
+    }
 
     .navContent {
         transform: none;
@@ -157,9 +185,13 @@ li:active:has(> .navContent:focus) {
 }
 
 .navCart:hover,
-.navCart:has(> .navContent:focus) {
-    box-shadow: 0px 3px 2px 0px var(--cart-color);
+.navCart:has(> div > .navContent:focus-visible) {
+    .navContainer {
+        box-shadow: 0px 3px 2px 0px var(--cart-color);
+    }
+}
 
+.navCart:hover {
     .navContent {
         box-shadow: 6px 6px 0px var(--cart-color-transparent);
 
@@ -171,13 +203,19 @@ li:active:has(> .navContent:focus) {
     }
 }
 
-.navCart:active,
-.navCart:active:has(> .navContent:focus) {
-    box-shadow:
-        0px 2px 4px 4px var(--cart-color),
-        0px 8px 8px 0px var(--cart-color-transparent);
+.navCart:has(> div > .navContent:focus-visible) {
+    outline: var(--focus-outline-width) solid var(--cart-color);
+}
 
-    transition-duration: 100ms;
+.navCart:active,
+.navCart:active:has(> div > .navContent:focus-visible) {
+    .navContainer {
+        box-shadow:
+            0px 2px 4px 4px var(--cart-color),
+            0px 8px 8px 0px var(--cart-color-transparent);
+
+        transition-duration: 100ms;
+    }
 
     .navContent {
         transform: none;

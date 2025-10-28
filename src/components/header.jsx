@@ -8,17 +8,23 @@ export default function Header({ currentContext, cartItems }) {
     <nav className="mainNav">
       <h1>ShopDigi</h1>
       <ol>
-        <li className="navHome centerAligned">
-          <button className="navContent animated">Home</button>
+        <li className="navHome">
+          <div className="navContainer centerAligned">
+            <button className="navContent animated">Home</button>
+          </div>
         </li>
-        <li className="navShop centerAligned">
-          <button className="navContent animated">Shop</button>
+        <li className="navShop">
+          <div className="navContainer centerAligned">
+            <button className="navContent animated">Shop</button>
+          </div>
         </li>
-        <li className="navCart centerAligned">
-          <button className="navContent">
-            Cart
-            <span className={cartNumberClassName}>{cartNumberDisplay}</span>
-          </button>
+        <li className="navCart">
+          <div className="navContainer centerAligned">
+            <button className="navContent">
+              Cart
+              <span className={cartNumberClassName}>{cartNumberDisplay}</span>
+            </button>
+          </div>
         </li>
       </ol>
     </nav>
