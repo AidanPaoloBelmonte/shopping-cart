@@ -20,8 +20,8 @@ export default function Header({ currentContext, cartItems }) {
         </li>
         <li className="navCart">
           <div className="navContainer centerAligned">
-            <button className="navContent">
-              Cart
+            <button className="navContent centerAligned">
+              <span>Cart</span>
               <span className={cartNumberClassName}>{cartNumberDisplay}</span>
             </button>
           </div>
