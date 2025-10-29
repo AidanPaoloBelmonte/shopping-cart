@@ -9,14 +9,15 @@ import Cart from "./components/cart";
 import "./App.css";
 
 function LayoutContext() {
-  const [currentContext, setContext] = useState(0);
+  const [pageContext, setPageContext] = useState(0);
   const [notifArea, setNotifArea] = useState({ id: 0 });
   const [cartItems, setCartItems] = useState([]);
 
   return (
     <>
       <Header
-        currentContext={currentContext}
+        pageContext={pageContext}
+        setPageContext={setPageContext}
         cartItems={cartItems}
         notifArea={notifArea}
       />

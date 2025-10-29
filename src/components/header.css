@@ -45,6 +45,28 @@ nav {
     outline: 1px solid slategray;
 
     user-select: none;
+
+    transition:
+        box-shadow 150ms ease-in-out,
+        outline 150ms ease-in-out;
+}
+
+nav.home {
+    box-shadow: 0px 2px 3px var(--home-color);
+
+    outline: 1px solid var(--home-color-transparent);
+}
+
+nav.shop {
+    box-shadow: 0px 2px 3px var(--shop-color);
+
+    outline: 1px solid var(--shop-color-transparent);
+}
+
+nav.cart {
+    box-shadow: 0px 2px 3px var(--cart-color);
+
+    outline: 1px solid var(--cart-color-transparent);
 }
 
 h1 {
@@ -305,7 +327,7 @@ li:active:has(> div > .navContent:focus-visible) {
         padding-left: 48px;
 
         clip-path: inset(0px 0px -15px 0px);
-        outline: 1px solid lightslategray;
+        outline: 1px solid lightsteelblue;
     }
 
     h3 {
