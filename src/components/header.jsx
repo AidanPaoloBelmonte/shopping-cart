@@ -26,26 +26,24 @@ export default function Header({
         <h1>ShopDigi</h1>
         <ol>
           <li className="navHome" onClick={onPageChange("home")}>
-            <div className="navContainer centerAligned">
-              <Link to="home" className="navContent animated">
-                Home
-              </Link>
-            </div>
+            <Link to="home" className="navContainer centerAligned">
+              <a className="navContent animated">Home</a>
+            </Link>
           </li>
           <li className="navShop" onClick={onPageChange("shop")}>
-            <div className="navContainer centerAligned">
-              <Link to="shop" className="navContent animated">
+            <Link to="shop" className="navContainer centerAligned">
+              <a to="shop" className="navContent animated">
                 Shop
-              </Link>
-            </div>
+              </a>
+            </Link>
           </li>
           <li className="navCart" onClick={onPageChange("cart")}>
-            <div className="navContainer centerAligned">
-              <Link to="cart" className="navContent centerAligned">
+            <Link to="cart" className="navContainer centerAligned">
+              <a className="navContent centerAligned">
                 <span>Cart</span>
                 <span className={cartNumberClassName}>{cartNumberDisplay}</span>
-              </Link>
-            </div>
+              </a>
+            </Link>
           </li>
         </ol>
       </nav>
