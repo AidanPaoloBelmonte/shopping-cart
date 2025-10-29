@@ -1,10 +1,14 @@
 import { Link } from "react-router";
 
+import getNotifArea from "./notif-area";
+
 import "./header.css";
 
-export default function Header({ currentContext, cartItems }) {
+export default function Header({ currentContext, cartItems, notifArea }) {
   const cartNumberClassName = `cartNumber centerAligned ${cartItems.length ? "" : "empty"}`;
   const cartNumberDisplay = Math.ceil(Math.floor(cartItems.length, 99), 0);
+
+  const notifAreaDisplay = getNotifArea(notifArea);
 
   return (
     <section className="headerSection">
@@ -35,11 +39,7 @@ export default function Header({ currentContext, cartItems }) {
           </li>
         </ol>
       </nav>
-      <div className="notifArea centerAligned">
-        <h4 className="centerAligned">
-          Everything from Everywhere at your fingertips.
-        </h4>
-      </div>
+      {notifAreaDisplay}
     </section>
   );
 }

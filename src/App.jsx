@@ -1,10 +1,5 @@
 import { useState } from "react";
-import {
-  BrowserRouter,
-  RouterProvider,
-  Outlet,
-  createBrowserRouter,
-} from "react-router";
+import { RouterProvider, Outlet, createBrowserRouter } from "react-router";
 
 import Header from "./components/header";
 import Home from "./components/home";
@@ -15,12 +10,17 @@ import "./App.css";
 
 function LayoutContext() {
   const [currentContext, setContext] = useState(0);
-  const [cartItems, setCartItems] = useState(["Wow"]);
+  const [notifArea, setNotifArea] = useState({ id: 0 });
+  const [cartItems, setCartItems] = useState([]);
 
   return (
     <>
-      <Header currentContext={currentContext} cartItems={cartItems} />
-      <Outlet context={{ cartItems }} />
+      <Header
+        currentContext={currentContext}
+        cartItems={cartItems}
+        notifArea={notifArea}
+      />
+      <Outlet context={{ cartItems, setNotifArea }} />
     </>
   );
 }
