@@ -31,7 +31,7 @@
 
 .about {
     grid-column: 9 / span 5;
-    padding: 16px;
+    padding: 24px;
 
     background-color: rgba(72, 129, 178, 0.1);
 

@@ -79,6 +79,8 @@ h1 {
 a {
     color: inherit;
     text-decoration: none;
+
+    outline: 0px;
 }
 
 ol {
@@ -148,7 +150,7 @@ li {
 }
 
 li:hover,
-li:has(> div > .navContent:focus-visible) {
+li:has(> .navContainer:focus-visible) {
     .navContainer {
         box-shadow: var(--home-shadow-faint);
     }
@@ -165,12 +167,12 @@ li:hover {
     }
 }
 
-li:has(> div > .navContent:focus-visible) {
+li:has(> .navContainer:focus-visible) {
     outline: var(--focus-outline-width) solid var(--home-color);
 }
 
 li:active,
-li:active:has(> div > .navContent:focus-visible) {
+li:active:has(> .navContainer:focus-visible) {
     color: whitesmoke;
 
     transition-duration: 100ms;
@@ -195,7 +197,7 @@ li:active:has(> div > .navContent:focus-visible) {
 }
 
 .navShop:hover,
-.navShop:has(> div > .navContent:focus-visible) {
+.navShop:has(> .navContainer:focus-visible) {
     .navContainer {
         box-shadow: var(--shop-shadow-faint);
     }
@@ -209,12 +211,12 @@ li:active:has(> div > .navContent:focus-visible) {
     }
 }
 
-.navShop:has(> div > .navContent:focus-visible) {
+.navShop:has(> .navContainer:focus-visible) {
     outline: var(--focus-outline-width) solid var(--shop-color);
 }
 
 .navShop:active,
-.navShop:active:has(> div > .navContent:focus-visible) {
+.navShop:active:has(> .navContainer:focus-visible) {
     .navContainer {
         box-shadow: var(--shop-shadow-strong);
 
@@ -246,7 +248,7 @@ li:active:has(> div > .navContent:focus-visible) {
 }
 
 .navCart:hover,
-.navCart:has(> div > .navContent:focus-visible) {
+.navCart:has(> .navContainer:focus-visible) {
     .navContainer {
         box-shadow: var(--cart-shadow-faint);
     }
@@ -264,12 +266,12 @@ li:active:has(> div > .navContent:focus-visible) {
     }
 }
 
-.navCart:has(> div > .navContent:focus-visible) {
+.navCart:has(> .navContainer:focus-visible) {
     outline: var(--focus-outline-width) solid var(--cart-color);
 }
 
 .navCart:active,
-.navCart:active:has(> div > .navContent:focus-visible) {
+.navCart:active:has(> .navContainer:focus-visible) {
     .navContainer {
         box-shadow: var(--cart-shadow-strong);
 
