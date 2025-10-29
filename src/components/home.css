@@ -1,0 +1,52 @@
+.homeSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 48px 64px;
+
+    height: 100%;
+}
+
+.imageCarousel {
+    flex: 1 1 250px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+
+    aspect-ratio: 16/9;
+
+    border: 1px solid steelblue;
+    margin: 0px 128px;
+
+    box-shadow:
+        rgba(72, 129, 178, 1) 0px 3px 6px -1px,
+        rgba(72, 129, 178, 0.24) 0px 2px 4px -1px;
+}
+
+.window {
+    grid-column: 1 / span 7;
+}
+
+.about {
+    grid-column: 9 / span 5;
+    padding: 16px;
+
+    background-color: rgba(72, 129, 178, 0.1);
+
+    clip-path: inset(0px 0px 0px -15px);
+    box-shadow:
+        rgba(72, 129, 178, 0.1) -9px 0px 6px -1px,
+        rgba(72, 129, 178, 0.024) -6px 0px 4px -1px;
+}
+
+h2 {
+    margin: 0;
+
+    font-size: 1.8rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
