@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router";
 
 import getNotifArea from "./notif-area";
@@ -16,7 +15,15 @@ export default function Header({
   };
 
   const cartNumberClassName = `cartNumber centerAligned ${cartItems.length ? "" : "empty"}`;
-  const cartNumberDisplay = Math.ceil(Math.floor(cartItems.length, 99), 0);
+  const cartNumberDisplay = Math.ceil(
+    Math.floor(
+      cartItems.reduce((total, item) => {
+        return total + item.amount;
+      }, 0),
+      99,
+    ),
+    0,
+  );
 
   const notifAreaDisplay = getNotifArea(notifArea);
 

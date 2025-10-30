@@ -21,7 +21,9 @@ function LayoutContext() {
         cartItems={cartItems}
         notifArea={notifArea}
       />
-      <Outlet context={{ cartItems, setPageContext, setNotifArea }} />
+      <Outlet
+        context={{ cartItems, setPageContext, setNotifArea, setCartItems }}
+      />
     </>
   );
 }

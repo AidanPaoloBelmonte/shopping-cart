@@ -6,9 +6,43 @@ import ShopCard from "./shopCard";
 import "./shop.css";
 
 export default function Shop() {
-  const { setNotifArea } = useOutletContext();
+  const { cartItems, setNotifArea, setCartItems } = useOutletContext();
   const [isReady, setReady] = useState(false);
   const [products, setProducts] = useState({});
+
+  const onAddCart = (id, title, price, image) => {
+    return () => {
+      let containsItem = false;
+      const items = [...cartItems];
+      items.forEach((item) => {
+        if (item.id !== id) return;
+        containsItem = true;
+        item.amount++;
+
+        setCartItems(items);
+        return;
+      });
+
+      if (!containsItem) {
+        const newItem = {
+          id: id,
+          title: title,
+          price: price,
+          image: image,
+          amount: 1,
+        };
+
+        if (!cartItems) {
+          items.length = 0;
+        }
+
+        items.push(newItem);
+
+        setCartItems([...items]);
+        console.log(items);
+      }
+    };
+  };
 
   useEffect(() => {
     setNotifArea(1);
@@ -35,7 +69,9 @@ export default function Shop() {
   }
 
   const shopCards = products.map((product) => {
-    return <ShopCard key={product.id} {...product}></ShopCard>;
+    return (
+      <ShopCard key={product.id} onAddCart={onAddCart} {...product}></ShopCard>
+    );
   });
 
   return (

@@ -1,4 +1,6 @@
-export default function ShopCard({ title, price, image }) {
+export default function ShopCard({ id, title, price, image, onAddCart }) {
+  const onClick = onAddCart(id, title, price, image);
+
   return (
     <div className="shopCard">
       <div className="imageContainer centerAligned">
@@ -10,7 +12,9 @@ export default function ShopCard({ title, price, image }) {
       <div className="buyPanel">
         <div className="overflowContainer">
           <p>{`$${price}`}</p>
-          <button>Add to Cart</button>
+          <button type="button" onClick={onClick}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
