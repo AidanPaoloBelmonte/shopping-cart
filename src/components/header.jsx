@@ -27,22 +27,22 @@ export default function Header({
         <ol>
           <li className="navHome" onClick={onPageChange("home")}>
             <Link to="home" className="navContainer centerAligned">
-              <a className="navContent animated">Home</a>
+              <span className="navContent animated">Home</span>
             </Link>
           </li>
           <li className="navShop" onClick={onPageChange("shop")}>
             <Link to="shop" className="navContainer centerAligned">
-              <a to="shop" className="navContent animated">
+              <span to="shop" className="navContent animated">
                 Shop
-              </a>
+              </span>
             </Link>
           </li>
           <li className="navCart" onClick={onPageChange("cart")}>
             <Link to="cart" className="navContainer centerAligned">
-              <a className="navContent centerAligned">
+              <span className="navContent centerAligned">
                 <span>Cart</span>
                 <span className={cartNumberClassName}>{cartNumberDisplay}</span>
-              </a>
+              </span>
             </Link>
           </li>
         </ol>
