@@ -45,6 +45,7 @@ nav {
 
     background-color: white;
 
+    -webkit-user-drag: none;
     user-select: none;
 
     transition:
@@ -106,24 +107,24 @@ li {
     vertical-align: middle;
 
     transition: color 250ms ease-in-out;
+}
 
-    .navContent {
-        padding: 2px 8px;
-        border: 0px;
-        outline: 0px;
-        border-radius: 8px;
+.navContent {
+    padding: 2px 8px;
+    border: 0px;
+    outline: 0px;
+    border-radius: 8px;
 
-        font-size: inherit;
-        font-family: inherit;
+    font-size: inherit;
+    font-family: inherit;
 
-        background-color: transparent;
+    background-color: transparent;
 
-        transition:
-            transform 250ms ease-in-out,
-            border-radius 150ms ease-in,
-            box-shadow 250ms ease-in-out,
-            background-color 250ms ease-in-out;
-    }
+    transition:
+        transform 250ms ease-in-out,
+        border-radius 150ms ease-in,
+        box-shadow 250ms ease-in-out,
+        background-color 250ms ease-in-out;
 }
 
 .headerSection {
@@ -149,14 +150,14 @@ li {
     transition: box-shadow 250ms ease;
 }
 
-li:hover,
-li:has(> .navContainer:focus-visible) {
+.navItem:hover,
+.navItem:has(> .navContainer:focus-visible) {
     .navContainer {
         box-shadow: var(--home-shadow-faint);
     }
 }
 
-li:hover {
+.navItem:hover {
     .navContent {
         transform: translate(-3px, -3px);
 
@@ -167,12 +168,14 @@ li:hover {
     }
 }
 
-li:has(> .navContainer:focus-visible) {
-    outline: var(--focus-outline-width) solid var(--home-color);
+.navItem:has(> .navContainer:focus-visible) {
+    .navContent {
+        outline: var(--focus-outline-width) solid var(--home-color);
+    }
 }
 
-li:active,
-li:active:has(> .navContainer:focus-visible) {
+.navItem:active,
+.navItem:active:has(> .navContainer:focus-visible) {
     color: whitesmoke;
 
     transition-duration: 100ms;
@@ -212,7 +215,9 @@ li:active:has(> .navContainer:focus-visible) {
 }
 
 .navShop:has(> .navContainer:focus-visible) {
-    outline: var(--focus-outline-width) solid var(--shop-color);
+    .navContent {
+        outline: var(--focus-outline-width) solid var(--shop-color);
+    }
 }
 
 .navShop:active,
@@ -267,7 +272,9 @@ li:active:has(> .navContainer:focus-visible) {
 }
 
 .navCart:has(> .navContainer:focus-visible) {
-    outline: var(--focus-outline-width) solid var(--cart-color);
+    .navContent {
+        outline: var(--focus-outline-width) solid var(--cart-color);
+    }
 }
 
 .navCart:active,

@@ -1,27 +1,31 @@
 import { useEffect } from "react";
-import { useOutletContext } from "react-router";
+import { useOutletContext, Link } from "react-router";
 
 import "./home.css";
 
 export default function Home() {
-  const { setNotifArea } = useOutletContext();
+  const { setPageContext, setNotifArea } = useOutletContext();
 
   useEffect(() => {
     setNotifArea(0);
   });
 
+  const onPageChange = (ctx) => {
+    return () => setPageContext(ctx);
+  };
+
   return (
     <section className="homeSection">
-      <div className="imageCarousel">
-        <div className="window"></div>
-        <div className="about">
-          <h2>New Summer Sale!</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-            autem ullam quos dicta. Quos quis, odio in atque commodi asperiores
-            delectus aliquid soluta iusto distinctio modi laboriosam eos dolorum
-            sint!
-          </p>
+      <div className="slogan">
+        <h2>
+          Everything from Everywhere.
+          <br />
+          All at your fingertips.
+        </h2>
+        <div className="navItem navShop" onClick={onPageChange("shop")}>
+          <Link to="/shop" className="navContainer flexAlignEnd">
+            <span className="navContent animated">Shop Now</span>
+          </Link>
         </div>
       </div>
     </section>

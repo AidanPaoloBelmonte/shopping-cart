@@ -25,19 +25,19 @@ export default function Header({
       <nav className={`mainNav ${pageContext}`}>
         <h1>ShopDigi</h1>
         <ol>
-          <li className="navHome" onClick={onPageChange("home")}>
+          <li className="navItem navHome" onClick={onPageChange("home")}>
             <Link to="home" className="navContainer centerAligned">
               <span className="navContent animated">Home</span>
             </Link>
           </li>
-          <li className="navShop" onClick={onPageChange("shop")}>
+          <li className="navItem navShop" onClick={onPageChange("shop")}>
             <Link to="shop" className="navContainer centerAligned">
               <span to="shop" className="navContent animated">
                 Shop
               </span>
             </Link>
           </li>
-          <li className="navCart" onClick={onPageChange("cart")}>
+          <li className="navItem navCart" onClick={onPageChange("cart")}>
             <Link to="cart" className="navContainer centerAligned">
               <span className="navContent centerAligned">
                 <span>Cart</span>
