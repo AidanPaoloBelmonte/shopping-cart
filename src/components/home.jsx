@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   return (
-    <section className="homeSection">
+    <section className="baseSection homeSection">
       <div className="slogan">
         <h2>
           Everything from Everywhere.
