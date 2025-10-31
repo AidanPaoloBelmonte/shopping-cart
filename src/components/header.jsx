@@ -16,6 +16,10 @@ export default function Header({
     return () => setPageContext(ctx);
   };
 
+  const onSearchType = (e) => {
+    setSearchQuery(e.target.value ? e.target.value : "");
+  };
+
   const cartNumberClassName = `cartNumber centerAligned ${cartItems.length ? "" : "empty"}`;
   const cartNumberDisplay = Math.ceil(
     Math.floor(
@@ -27,7 +31,13 @@ export default function Header({
     0,
   );
 
-  const notifAreaDisplay = <NotifArea id={notifArea}></NotifArea>;
+  const notifAreaDisplay = (
+    <NotifArea
+      id={notifArea}
+      value={searchQuery}
+      onChange={onSearchType}
+    ></NotifArea>
+  );
 
   return (
     <section className="headerSection">
