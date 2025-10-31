@@ -82,26 +82,31 @@ export default function Cart() {
   return (
     <section className="baseSection cartSection">
       <div className="cartDisplay">{cartCards}</div>
-      <div className="checkoutPanel">
-        <div className="summaryTitle">
-          <h2>Summary</h2>
+      <div className="cartManagement">
+        <div className="checkoutPanel">
+          <div className="summaryTitle">
+            <h2>Summary</h2>
+          </div>
+          <div className="summary">
+            <span className="itemsTotal">
+              <span>Items</span>
+              <span className="totalDisplay">{`x${itemsTotal}`}</span>
+            </span>
+            <span className="summaryValue">{`$${itemsPriceTotal.toFixed(2)}`}</span>
+            <span>Shipping</span>
+            <span className="summaryValue">{`$${shippingCost.toFixed(2)}`}</span>
+            <span>Tax</span>
+            <span className="summaryValue">{`$${tax.toFixed(2)}`}</span>
+          </div>
+          <div className="priceTotal">
+            <span>Total</span>
+            <span className="priceTotalDisplay">{`$${finalTotal.toFixed(2)}`}</span>
+          </div>
+          <button type="button">Checkout</button>
         </div>
-        <div className="summary">
-          <span className="itemsTotal">
-            <span>Items</span>
-            <span className="totalDisplay">{`x${itemsTotal}`}</span>
-          </span>
-          <span className="summaryValue">{`$${itemsPriceTotal.toFixed(2)}`}</span>
-          <span>Shipping</span>
-          <span className="summaryValue">{`$${shippingCost.toFixed(2)}`}</span>
-          <span>Tax</span>
-          <span className="summaryValue">{`$${tax.toFixed(2)}`}</span>
-        </div>
-        <div className="priceTotal">
-          <span>Total</span>
-          <span className="priceTotalDisplay">{`$${finalTotal.toFixed(2)}`}</span>
-        </div>
-        <button type="button">Checkout</button>
+        <button className="cartReset" type="button">
+          Reset Cart
+        </button>
       </div>
     </section>
   );
