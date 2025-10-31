@@ -21,15 +21,10 @@ export default function Header({
   };
 
   const cartNumberClassName = `cartNumber centerAligned ${cartItems.length ? "" : "empty"}`;
-  const cartNumberDisplay = Math.ceil(
-    Math.floor(
-      cartItems.reduce((total, item) => {
-        return cartItems.length ? total + item.amount : 0;
-      }, 0),
-      99,
-    ),
-    0,
-  );
+  const totalItems = cartItems.reduce((total, item) => {
+    return cartItems.length ? total + item.amount : 0;
+  }, 0);
+  const cartNumberDisplay = Math.max(Math.min(totalItems, 99), 0);
 
   const notifAreaDisplay = (
     <NotifArea
@@ -73,7 +68,10 @@ export default function Header({
             >
               <span className="navContent centerAligned">
                 <span>Cart</span>
-                <span className={cartNumberClassName}>{cartNumberDisplay}</span>
+                <span className={cartNumberClassName}>
+                  {cartNumberDisplay}
+                  {totalItems > 99 ? "+" : ""}
+                </span>
               </span>
             </Link>
           </li>
