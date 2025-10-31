@@ -110,7 +110,7 @@
     p {
         z-index: 10;
 
-        color: orangered;
+        color: var(--cart-color-complimentary);
     }
 
     button:active {

@@ -39,8 +39,6 @@
     gap: 32px;
 
     padding: 0px 64px;
-
-    background-color: white;
 }
 
 nav {
@@ -58,7 +56,8 @@ nav {
 
     outline: 1px solid slategray;
 
-    -webkit-user-drag: none;
+    background-color: white;
+
     user-select: none;
 
     transition:

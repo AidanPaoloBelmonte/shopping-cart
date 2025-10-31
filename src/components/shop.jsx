@@ -10,6 +10,9 @@ export default function Shop() {
   const [isReady, setReady] = useState(false);
   const [products, setProducts] = useState({});
 
+  const test = cartItems.filter((item) => item.title.includes("Mens"));
+  console.log(test);
+
   const onAddCart = (id, title, price, image) => {
     return () => {
       let containsItem = false;

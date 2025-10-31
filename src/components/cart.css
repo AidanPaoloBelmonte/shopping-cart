@@ -150,6 +150,8 @@
     color: ghostwhite;
     background-color: var(--cart-color);
 
+    user-select: none;
+
     h2 {
         margin: 0px;
     }
