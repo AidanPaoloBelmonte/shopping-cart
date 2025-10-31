@@ -101,6 +101,7 @@ export default function Cart() {
           <span>Total</span>
           <span className="priceTotalDisplay">{`$${finalTotal.toFixed(2)}`}</span>
         </div>
+        <button type="button">Checkout</button>
       </div>
     </section>
   );

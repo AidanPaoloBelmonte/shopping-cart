@@ -18,6 +18,7 @@
     --cart-color: sandybrown;
     --cart-color-transparent: rgba(244, 163, 96, 0.4);
     --cart-color-complimentary: brown;
+    --cart-color-complimentary-transparent: rgba(165, 49, 42, 0.4);
     --cart-shadow-faint:
         rgba(244, 163, 96, 1) 0px 3px 6px -1px,
         rgba(244, 163, 96, 0.24) 0px 2px 4px -1px;
