@@ -1,4 +1,10 @@
-export default function NotifArea({ id = 0, value, onChange }) {
+export default function NotifArea({
+  id = 0,
+  value,
+  onChange = () => {
+    return;
+  },
+}) {
   switch (id) {
     case 1:
       return (

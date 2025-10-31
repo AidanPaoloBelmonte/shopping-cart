@@ -47,6 +47,10 @@ export default function Cart() {
     };
   };
 
+  const onResetCart = () => {
+    setCartItems([]);
+  };
+
   let itemsTotal = 0;
   let itemsPriceTotal = 0;
   const cartCards = cartItems.map((item) => {
@@ -104,7 +108,7 @@ export default function Cart() {
           </div>
           <button type="button">Checkout</button>
         </div>
-        <button className="cartReset" type="button">
+        <button className="cartReset" type="button" onClick={onResetCart}>
           Reset Cart
         </button>
       </div>
