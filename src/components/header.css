@@ -28,6 +28,21 @@
     --focus-outline-width: 2px;
 }
 
+.headerSection {
+    z-index: 10;
+
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+
+    padding: 0px 64px;
+
+    background-color: white;
+}
+
 nav {
     display: flex;
     justify-content: flex-start;
@@ -42,8 +57,6 @@ nav {
     box-shadow: 0px 2px 3px darkgrey;
 
     outline: 1px solid slategray;
-
-    background-color: white;
 
     -webkit-user-drag: none;
     user-select: none;
@@ -125,17 +138,6 @@ li {
         border-radius 150ms ease-in,
         box-shadow 250ms ease-in-out,
         background-color 250ms ease-in-out;
-}
-
-.headerSection {
-    position: sticky;
-    top: 0;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-
-    padding: 0px 64px;
 }
 
 .navContainer {

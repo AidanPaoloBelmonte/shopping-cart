@@ -1,4 +1,6 @@
 .cartSection {
+    position: relative;
+
     display: flex;
     align-items: start;
     gap: 16px;
@@ -133,6 +135,9 @@
 
 .checkoutPanel {
     flex: 0 350px;
+
+    position: sticky;
+    top: 75px;
 
     display: flex;
     flex-direction: column;

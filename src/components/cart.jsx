@@ -31,7 +31,6 @@ export default function Cart() {
         if (item.id !== id) return;
         containsItem = true;
         item.amount--;
-        console.log(item.amount);
 
         return;
       });
