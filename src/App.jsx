@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { RouterProvider, Outlet, createBrowserRouter } from "react-router";
+import {
+  RouterProvider,
+  Outlet,
+  createBrowserRouter,
+  useLocation,
+} from "react-router";
 
 import Header from "./components/header";
 import Home from "./components/home";
@@ -9,7 +14,9 @@ import Cart from "./components/cart";
 import "./App.css";
 
 function LayoutContext() {
-  const [pageContext, setPageContext] = useState(0);
+  const [pageContext, setPageContext] = useState(
+    useLocation().pathname.replace("/", ""),
+  );
   const [notifArea, setNotifArea] = useState({ id: 0 });
   const [cartItems, setCartItems] = useState([]);
 
