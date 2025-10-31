@@ -38,7 +38,6 @@ function LayoutContext() {
           setPageContext,
           setNotifArea,
           setCartItems,
-          setSearchQuery,
         }}
       />
     </>

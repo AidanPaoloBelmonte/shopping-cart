@@ -192,15 +192,11 @@
     font-weight: bold;
 }
 
-.emptyWarningDisplay {
+.cartSection > .emptyWarningDisplay {
     position: relative;
 
-    padding: 16px 32px;
-    border-radius: 16px;
-    margin: auto;
+    color: var(--cart-color);
 
     outline: 3px solid var(--cart-color);
     box-shadow: var(--cart-shadow-faint);
-
-    user-select: none;
 }

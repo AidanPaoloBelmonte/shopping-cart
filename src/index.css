@@ -39,6 +39,14 @@ h1 {
     padding: 32px 64px 48px 64px;
 }
 
+.emptyWarningDisplay {
+    padding: 16px 32px;
+    border-radius: 16px;
+    margin: auto;
+
+    user-select: none;
+}
+
 @media (prefers-color-scheme: light) {
     :root {
         color: #213547;

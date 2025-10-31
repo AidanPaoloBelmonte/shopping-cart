@@ -6,7 +6,8 @@ import ShopCard from "./shopCard";
 import "./shop.css";
 
 export default function Shop() {
-  const { cartItems, setNotifArea, setCartItems } = useOutletContext();
+  const { cartItems, searchQuery, setNotifArea, setCartItems } =
+    useOutletContext();
   const [isReady, setReady] = useState(false);
   const [products, setProducts] = useState({});
 
@@ -67,11 +68,43 @@ export default function Shop() {
     );
   }
 
-  const shopCards = products.map((product) => {
+  const shopCards = !searchQuery
+    ? products.map((product) => {
+        return (
+          <ShopCard
+            key={product.id}
+            onAddCart={onAddCart}
+            {...product}
+          ></ShopCard>
+        );
+      })
+    : products
+        .filter(
+          (product) =>
+            searchQuery &&
+            product.title.toLowerCase().includes(searchQuery.toLowerCase()),
+        )
+        .map((product) => {
+          return (
+            <ShopCard
+              key={product.id}
+              onAddCart={onAddCart}
+              {...product}
+            ></ShopCard>
+          );
+        });
+
+  console.log(shopCards);
+
+  if (!shopCards.length) {
     return (
-      <ShopCard key={product.id} onAddCart={onAddCart} {...product}></ShopCard>
+      <section className="baseSection shopSection">
+        <div className="emptyWarningDisplay">
+          <h2>No items matched your query!</h2>
+        </div>
+      </section>
     );
-  });
+  }
 
   return (
     <section className="baseSection">
