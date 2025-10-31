@@ -93,14 +93,17 @@
     flex: 1;
 
     display: flex;
+
+    overflow: hidden;
+}
+
+.buyPanel > .overflowContainer {
     align-items: center;
 
     padding: 12px;
     border-radius: 16px;
 
     background-color: white;
-
-    overflow: hidden;
 }
 
 .overflowContainer:has(> button:active) {
@@ -113,7 +116,7 @@
     button:active {
         transform: none;
 
-        box-shadow: 0px 0px 0px 175px var(--shop-color-transparent);
+        box-shadow: 0px 0px 0px 0px var(--shop-color-transparent);
     }
 }
 

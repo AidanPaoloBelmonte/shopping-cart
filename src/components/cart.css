@@ -1,0 +1,124 @@
+.cartDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+}
+
+.cartCard {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    padding: 0px 16px;
+    border-radius: 16px;
+
+    background-color: rgba(244, 163, 96, 0.05);
+
+    * {
+        padding: 16px 0px;
+        margin: 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.cartImage {
+    width: 200px;
+    aspect-ratio: 1/1;
+
+    object-fit: contain;
+}
+
+.cartTitle {
+    width: 50%;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cartCard > .overflowContainer,
+.cartPrice,
+.cartSubTotal {
+    flex: 3 auto;
+}
+
+.amountDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cartAmount {
+    transition: color 150ms ease-in-out;
+}
+
+.amountControl {
+    font-size: 1rem;
+
+    aspect-ratio: 1/1;
+
+    border: 0px;
+    border-radius: 4px;
+    outline: 3px solid var(--cart-color-transparent);
+
+    background-color: transparent;
+
+    overflow: hidden;
+
+    transition-property:
+        color, outline, background-color, transform, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.amountControl:focus-visible {
+    outline: 3px solid var(--cart-color);
+    background-color: var(--cart-color-transparent);
+}
+
+.amountControl:hover {
+    transform: translate(-2px, -2px);
+
+    color: whitesmoke;
+    background-color: var(--cart-color);
+
+    box-shadow: 8px 8px 0px var(--cart-color-transparent);
+}
+
+.amountControl.minus:hover {
+    transform: translate(2px, 2px);
+    box-shadow: -8px -8px 0px var(--cart-color-transparent);
+}
+
+.amountDetails:has(> button:active) {
+    .cartAmount {
+        z-index: 10;
+
+        color: var(--shop-color);
+    }
+
+    button:active {
+        transform: none;
+
+        box-shadow: 0px 0px 0px 0px var(--cart-color-transparent);
+    }
+}
+
+.amountDetails:has(> .minus:active) {
+    .cartAmount {
+        color: orangered;
+    }
+
+    .minus:active {
+        box-shadow: 0px 0px 0px 0px var(--cart-color-transparent);
+    }
+}
+
+.cartSubTotal {
+    color: var(--cart-color-complimentary);
+    font-size: 1.2rem;
+    font-weight: bold;
+}

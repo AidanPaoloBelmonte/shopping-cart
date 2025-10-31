@@ -39,7 +39,6 @@ export default function Shop() {
         items.push(newItem);
 
         setCartItems([...items]);
-        console.log(items);
       }
     };
   };
@@ -53,8 +52,6 @@ export default function Shop() {
       .then((res) => {
         setReady(true);
         setProducts(res);
-
-        console.log(res);
       });
   }, [setNotifArea]);
 

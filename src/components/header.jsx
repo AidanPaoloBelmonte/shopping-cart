@@ -18,7 +18,7 @@ export default function Header({
   const cartNumberDisplay = Math.ceil(
     Math.floor(
       cartItems.reduce((total, item) => {
-        return total + item.amount;
+        return cartItems.length ? total + item.amount : 0;
       }, 0),
       99,
     ),
