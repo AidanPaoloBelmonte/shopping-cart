@@ -43,7 +43,14 @@ export default function Cart() {
     };
   };
 
+  let itemsTotal = 0;
+  let itemsPriceTotal = 0;
   const cartCards = cartItems.map((item) => {
+    if (item.amount) {
+      itemsTotal += item.amount;
+      itemsPriceTotal += item.price * item.amount;
+    }
+
     return (
       <CartCard
         key={item.id}
@@ -54,9 +61,43 @@ export default function Cart() {
     );
   });
 
+  if (!itemsTotal) {
+    return (
+      <section className="baseSection cartSection">
+        <div className="emptyWarningDisplay">
+          <h2>Your cart is empty!</h2>
+        </div>
+      </section>
+    );
+  }
+
+  const shippingCost = itemsTotal * 0.25;
+  const tax = itemsPriceTotal * 0.12;
+  const finalTotal = itemsPriceTotal + shippingCost + tax;
+
   return (
     <section className="baseSection cartSection">
       <div className="cartDisplay">{cartCards}</div>
+      <div className="checkoutPanel">
+        <div className="summaryTitle">
+          <h2>Summary</h2>
+        </div>
+        <div className="summary">
+          <span className="itemsTotal">
+            <span>Items</span>
+            <span className="totalDisplay">{`x${itemsTotal}`}</span>
+          </span>
+          <span className="summaryValue">{`$${itemsPriceTotal.toFixed(2)}`}</span>
+          <span>Shipping</span>
+          <span className="summaryValue">{`$${shippingCost.toFixed(2)}`}</span>
+          <span>Tax</span>
+          <span className="summaryValue">{`$${tax.toFixed(2)}`}</span>
+        </div>
+        <div className="priceTotal">
+          <span>Total</span>
+          <span className="priceTotalDisplay">{`$${finalTotal.toFixed(2)}`}</span>
+        </div>
+      </div>
     </section>
   );
 }
