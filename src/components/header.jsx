@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-import getNotifArea from "./notif-area";
+import NotifArea from "./notif-area";
 
 import "./header.css";
 
@@ -9,6 +9,8 @@ export default function Header({
   setPageContext,
   cartItems,
   notifArea,
+  searchQuery,
+  setSearchQuery,
 }) {
   const onPageChange = (ctx) => {
     return () => setPageContext(ctx);
@@ -25,7 +27,7 @@ export default function Header({
     0,
   );
 
-  const notifAreaDisplay = getNotifArea(notifArea);
+  const notifAreaDisplay = <NotifArea id={notifArea}></NotifArea>;
 
   return (
     <section className="headerSection">
@@ -52,10 +54,11 @@ export default function Header({
               </span>
             </Link>
           </li>
-          <li className="navItem navCart" onClick={onPageChange("cart")}>
+          <li className="navItem navCart">
             <Link
               to="cart"
               className="navContainer centerAligned"
+              onClick={onPageChange("cart")}
               viewTransition
             >
               <span className="navContent centerAligned">

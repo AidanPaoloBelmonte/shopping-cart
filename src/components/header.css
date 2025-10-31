@@ -352,3 +352,34 @@ li {
         text-align: right;
     }
 }
+
+.shopSearch {
+    align-self: center;
+
+    width: 30%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;
+
+    input {
+        padding: 5px 15px;
+        border: 1px solid var(--shop-color-transparent);
+        border-radius: 16px;
+
+        font-size: 1.2rem;
+
+        transition-property: background-color;
+        transition-duration: 250ms;
+        transition-timing-function: ease;
+    }
+
+    input:focus {
+        outline: 3px solid var(--shop-color);
+
+        box-shadow: var(--shop-shadow-faint);
+        background-color: rgba(244, 249, 247, 1);
+    }
+}

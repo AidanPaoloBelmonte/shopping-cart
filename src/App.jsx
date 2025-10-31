@@ -19,6 +19,7 @@ function LayoutContext() {
   );
   const [notifArea, setNotifArea] = useState({ id: 0 });
   const [cartItems, setCartItems] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <>
@@ -27,9 +28,18 @@ function LayoutContext() {
         setPageContext={setPageContext}
         cartItems={cartItems}
         notifArea={notifArea}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
       />
       <Outlet
-        context={{ cartItems, setPageContext, setNotifArea, setCartItems }}
+        context={{
+          cartItems,
+          searchQuery,
+          setPageContext,
+          setNotifArea,
+          setCartItems,
+          setSearchQuery,
+        }}
       />
     </>
   );

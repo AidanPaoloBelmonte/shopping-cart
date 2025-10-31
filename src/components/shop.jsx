@@ -11,7 +11,6 @@ export default function Shop() {
   const [products, setProducts] = useState({});
 
   const test = cartItems.filter((item) => item.title.includes("Mens"));
-  console.log(test);
 
   const onAddCart = (id, title, price, image) => {
     return () => {

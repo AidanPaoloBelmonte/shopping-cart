@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useOutletContext } from "react-router";
 
 import CartCard from "./cartCard";
@@ -5,7 +6,11 @@ import CartCard from "./cartCard";
 import "./cart.css";
 
 export default function Cart() {
-  const { cartItems, setCartItems } = useOutletContext();
+  const { cartItems, setCartItems, setNotifArea } = useOutletContext();
+
+  useEffect(() => {
+    setNotifArea(2);
+  });
 
   const onAddAmount = (id) => {
     return () => {
